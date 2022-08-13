@@ -38,8 +38,6 @@ const Todo = ({ todo }) => {
         ) : (
           todo.content
         )}
-      </div>
-      <div className="todo-icons">
         <MdClose className="todo-icon" onClick={() => removeTodo(todo.id)} />
 
         {editable ? (
@@ -58,6 +56,7 @@ const Todo = ({ todo }) => {
           <MdEdit className="todo-icon" onClick={() => setEditable(true)} />
         )}
       </div>
+      <div className="todo-icons"></div>
     </div>
   );
 };

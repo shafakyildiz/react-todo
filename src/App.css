@@ -3,6 +3,12 @@
     margin: 60px auto;
 }
 
+body {
+    color: rgb(230, 221, 211);
+    font-family: 'Courier New', Courier, monospace;
+    background-image: linear-gradient(to right, rgb(27, 110, 52), rgb(35, 107, 214));
+}
+
 .completed {
     text-decoration: line-through;
     opacity: 0.4;
@@ -52,4 +58,16 @@ input[type=submit]:hover {
 .todo-button:hover {
     background-color: #18cf36;
     color: white;
+}
+
+.todo-row {
+    width: 75%;
+    color: antiquewhite;
+    padding: 2.5%;
+    background-image: linear-gradient(to right, rgb(41, 39, 40), rgb(149, 163, 153));
+}
+
+.todo-icon {
+    background-color: linear-gradient(to right, rgb(83, 62, 74), rgb(29, 172, 72));
+    font-family: 'Courier New', Courier, monospace;
 }
