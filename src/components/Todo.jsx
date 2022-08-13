@@ -1,22 +1,20 @@
-import React from 'react'
-import { GrFormClose, GrFormEdit, GrFormCheckmark } from 'react-icons'
-import { useTodoLayerValue } from '../context/TodoContext'
+import React from "react";
+import { FaBeer } from "react-icons/fa";
+import { useTodoLayerValue } from "../context/TodoContext";
 
+const Todo = ({ todo }) => {
+  const [{}, dispatch] = useTodoLayerValue();
+  const removeTodo = (todoId) => {
+    dispatch({ type: "REMOVE_TODO", payload: todoId });
+  };
+  return (
+    <div className="todo-row">
+      <div>{todo.content}</div>
+      <div className="todo-icons">
+        <FaBeer className="todo-icon" onClick={() => removeTodo(todo.id)} />
+      </div>
+    </div>
+  );
+};
 
-const Todo = ({todo}) => {
-    return (
-        <div className='todo-row'>
-            <div>
-                {todo.content}
-            </div>
-            <div className='todo-icons'>
-                {/* <GrFormClose className="todo-icon" onClick={} />
-                <GrFormEdit className="todo-icon" onClick={} />
-                <GrFormCheckmark className="todo-icon" onClick={} /> */}
-
-            </div>
-        </div>
-    )
-}
-
-export default Todo
+export default Todo;

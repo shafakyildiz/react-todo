@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useTodoLayerValue } from "./context/TodoContext";
 import TodoList from "./components/TodoList.jsx";
+import "./App.css";
 
 const App = () => {
   const [{ todos }, dispatch] = useTodoLayerValue();
@@ -9,7 +10,7 @@ const App = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(content);
-    if (!content) {
+    if (!content && content.length < 1) {
       return;
     }
 
