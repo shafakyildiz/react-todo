@@ -15,7 +15,6 @@ const App = () => {
   }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(content);
     if (!content && content.length < 1) {
       return;
     }

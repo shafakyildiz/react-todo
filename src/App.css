@@ -4,7 +4,7 @@
 }
 
 body {
-    color: rgb(230, 221, 211);
+    color: white;
     font-family: 'Courier New', Courier, monospace;
     background-image: linear-gradient(to right, rgb(27, 110, 52), rgb(35, 107, 214));
 }
