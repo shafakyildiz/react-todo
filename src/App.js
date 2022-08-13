@@ -1,12 +1,47 @@
-import "./App.css";
+import React from "react";
+import { useState } from "react";
+import { useTodoLayerValue } from "./context/TodoContext";
+import TodoList from "./components/TodoList.jsx";
 
-function App() {
+const App = () => {
+  const [{ todos }, dispatch] = useTodoLayerValue();
+  const [content, setContent] = useState("");
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(content);
+    if (!content) {
+      return;
+    }
+
+    const newTodo = {
+      id: Math.floor(Math.random() * 3453453),
+      content: content,
+      isCompleted: false,
+    };
+
+    dispatch({ type: "ADD_TODO", payload: newTodo });
+
+    setContent("");
+  };
   return (
-    <div className="App">
+    <>
       <h1>Safak's Todo</h1>
-      <input type="text" />
-    </div>
+      <div className="container">
+        <form onSubmit={handleSubmit} className="todo-form">
+          <input
+            type="text"
+            className="todo-input"
+            onChange={(event) => setContent(event.target.value)}
+            value={content}
+          />
+          <button className="todo-button">Add</button>
+        </form>
+
+        {/* Todo List */}
+        <TodoList todos={todos} />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
