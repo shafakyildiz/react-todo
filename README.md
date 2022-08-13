@@ -8,4 +8,4 @@ Perfect transition from blue to green ❤
 
 Will be deployed as soon as possible.
 
-https://pasteboard.co/FRfBcay9NW68.png
+![Alt text](public/app.png?raw=true "Title")
