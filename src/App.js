@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTodoLayerValue } from "./context/TodoContext";
 import TodoList from "./components/TodoList.jsx";
 import "./App.css";
@@ -7,6 +7,12 @@ import "./App.css";
 const App = () => {
   const [{ todos }, dispatch] = useTodoLayerValue();
   const [content, setContent] = useState("");
+  const inputRef = useRef(null);
+  useEffect(() => {
+    return () => {
+      inputRef.current.focus();
+    };
+  }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(content);
@@ -34,6 +40,7 @@ const App = () => {
             className="todo-input"
             onChange={(event) => setContent(event.target.value)}
             value={content}
+            ref={inputRef}
           />
           <button className="todo-button">Add</button>
         </form>
