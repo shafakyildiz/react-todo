@@ -21,7 +21,7 @@ select {
 
 input[type=submit] {
     width: 70%;
-    background-color: #4CAF50;
+    background-color: #3d703e;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -46,15 +46,10 @@ input[type=submit]:hover {
     transition-duration: 0.4s;
     border-radius: 8px;
     margin-left: 5px;
+    cursor: pointer;
 }
 
-.button:hover {
-    background-color: #008CBA;
+.todo-button:hover {
+    background-color: #18cf36;
     color: white;
-}
-
-.title {
-    width: 100%;
-    display: inline-block;
-    margin: auto;
 }
