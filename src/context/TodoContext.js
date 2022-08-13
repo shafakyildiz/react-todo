@@ -7,4 +7,4 @@ export const TodoLayer = ({ initialState, reducer, children }) => (
   </TodoLayerContext.Provider>
 );
 
-export const useTodoLayerValue = () => useContext();
+export const useTodoLayerValue = () => useContext(TodoLayerContext);
