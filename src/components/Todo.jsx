@@ -1,5 +1,5 @@
 import React from "react";
-import { FaBeer } from "react-icons/fa";
+import { MdClose } from "react-icons/md";
 import { useTodoLayerValue } from "../context/TodoContext";
 
 const Todo = ({ todo }) => {
@@ -11,7 +11,7 @@ const Todo = ({ todo }) => {
     <div className="todo-row">
       <div>{todo.content}</div>
       <div className="todo-icons">
-        <FaBeer className="todo-icon" onClick={() => removeTodo(todo.id)} />
+        <MdClose className="todo-icon" onClick={() => removeTodo(todo.id)} />
       </div>
     </div>
   );
