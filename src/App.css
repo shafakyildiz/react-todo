@@ -65,9 +65,14 @@ input[type=submit]:hover {
     color: antiquewhite;
     padding: 2.5%;
     background-image: linear-gradient(to right, rgb(41, 39, 40), rgb(149, 163, 153));
+    border-radius: 8px;
+    margin-top: 5px;
 }
 
 .todo-icon {
-    background-color: linear-gradient(to right, rgb(83, 62, 74), rgb(29, 172, 72));
-    font-family: 'Courier New', Courier, monospace;
+    margin-top: 3px;
+    padding: 7px;
+    border: solid rgb(211, 204, 204);
+    border-radius: 8px;
+    background-color: #008CBA;
 }

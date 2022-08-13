@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import clsx from "clsx";
 import { MdClose, MdEdit, MdCheck } from "react-icons/md";
 import { useTodoLayerValue } from "../context/TodoContext";
+import "../App.css";
 
 const Todo = ({ todo }) => {
   const [{}, dispatch] = useTodoLayerValue();
@@ -20,6 +21,17 @@ const Todo = ({ todo }) => {
     dispatch({ type: "UPDATE_TODO", payload: todoId, newValue });
   };
 
+  const handleKeypress = (e) => {
+    //it triggers by pressing the enter key
+    if (e.keyCode === 13) {
+      updateTodo({
+        todoId: todo.id,
+        newValue: content,
+      });
+      setEditable(false);
+    }
+  };
+
   const todoStyle = clsx({
     ["todo-row"]: true,
     ["completed"]: todo.isCompleted,
@@ -34,29 +46,29 @@ const Todo = ({ todo }) => {
             value={content}
             onChange={(event) => setContent(event.target.value)}
             className="todo-input-edit"
+            onKeyDown={handleKeypress}
           />
         ) : (
           todo.content
         )}
-        <MdClose className="todo-icon" onClick={() => removeTodo(todo.id)} />
-
-        {editable ? (
-          <MdCheck
-            className="todo-icon"
-            onClick={() => {
-              updateTodo({
-                todoId: todo.id,
-                newValue: content,
-              });
-              setContent("");
-              setEditable(false);
-            }}
-          />
-        ) : (
-          <MdEdit className="todo-icon" onClick={() => setEditable(true)} />
-        )}
       </div>
       <div className="todo-icons"></div>
+      {editable ? (
+        <MdCheck
+          className="todo-icon"
+          onClick={() => {
+            updateTodo({
+              todoId: todo.id,
+              newValue: content,
+            });
+            setContent("");
+            setEditable(false);
+          }}
+        />
+      ) : (
+        <MdEdit className="todo-icon" onClick={() => setEditable(true)} />
+      )}
+      <MdClose className="todo-icon" onClick={() => removeTodo(todo.id)} />
     </div>
   );
 };
