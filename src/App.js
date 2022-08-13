@@ -32,8 +32,8 @@ const App = () => {
   };
   return (
     <>
-      <h1>Safak's Todo</h1>
       <div className="container">
+        <h1 className="title">Safak's Todo</h1>
         <form onSubmit={handleSubmit} className="todo-form">
           <input
             type="text"
