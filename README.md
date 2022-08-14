@@ -8,8 +8,6 @@ Hooks used: useState, useEffect, useRef, useContext
 
 Perfect transition from blue to green ❤
 
-Will be deployed as soon as possible.
-
 Live demo below:
 
 https://magnificent-liger-b03ee7.netlify.app
